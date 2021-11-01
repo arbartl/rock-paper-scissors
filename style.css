@@ -1,0 +1,35 @@
+#game-area {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+#player-choices {
+    border: 5px black solid;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding: 10px;
+}
+
+#scoreboard {
+    border: 5px black solid;
+    width: 50%;
+    height: 100px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#results-area {
+    border: 5px black solid;
+    width: 50%;
+    height: 100px;
+    margin-top: 25px;
+    padding: 10px;
+}
