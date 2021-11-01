@@ -2,11 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Function scope example</title>
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <script src="rps.js">
+  <script src="rps.js" defer>
   </script>
+
+<div id="game-area">
+  <div id="player-choices">
+    <h3>Make your choice:</h3>
+      <div>  
+      <button id="rock">ROCK</button>
+      <button id="paper">PAPER</button>
+      <button id="scissors">SCISSORS</button>
+      </div>
+  </div>
+  <div id="scoreboard">
+    <div id="player-score">Your Score: 0</div>
+    <div id="computer-score">Computer Score: 0</div>
+  </div>
+</div>
+<div id="results-area">
+  <h3>Results:</h3>
+  <p id="results-box">
+    Waiting for your choice...
+  </p>
+</div>
 </body>
 </html>
