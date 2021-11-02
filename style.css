@@ -9,7 +9,7 @@
 #player-choices {
     border: 5px black solid;
     width: 50%;
-    height: 100px;
+    height: 200px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -19,7 +19,7 @@
 #scoreboard {
     border: 5px black solid;
     width: 50%;
-    height: 100px;
+    height: 200px;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -29,7 +29,30 @@
 #results-area {
     border: 5px black solid;
     width: 50%;
-    height: 100px;
+    height: 200px;
     margin-top: 25px;
     padding: 10px;
+    text-align: center;
+}
+
+#fight-graphic {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.button {
+    display: flex;
+    flex-flow: column;
+}
+
+.graphic-icon {
+    height: 100px;
+    width: 100px;
+    border: 2px black solid;
 }

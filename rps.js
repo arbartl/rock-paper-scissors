@@ -1,19 +1,25 @@
 // Choose a random option for the computer
 let computerChoice;
 
+const yourIcon = document.getElementById('your-graphic');
+const computerIcon = document.getElementById('computer-graphic');
+
 function computerPlay () {
     let randInt = Math.floor((Math.random() * 6) + 1);
     switch(randInt) {
         case 1:
-        case 2:
+        case 2:            
+            computerIcon.src = `images/rock.png`;
             return "rock";
             break;
         case 3:
         case 4:
+            computerIcon.src = `images/paper.png`;
             return "paper";
             break;
         case 5:
         case 6:
+            computerIcon.src = `images/scissors.png`;
             return "scissors";
             break;
     }
@@ -28,7 +34,8 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerChoice = button.id;
-        console.log(playRound(playerChoice, computerChoice));
+        yourIcon.src = `images/${button.id}.png`;
+        console.log(playRound(playerChoice, computerChoice));        
     })
 });
 
@@ -39,36 +46,36 @@ let computerScore = 0;
 function playRound(playerChoice, computerChoice) {
     computerChoice = computerPlay();
     if (playerChoice === computerChoice) {
-        updateResults("It's a tie!");
+        updateResults("It's a tie!", "black");
         updateScoreBoard();        
     } else if (playerChoice === "rock") {
         if (computerChoice === "paper") {
             computerScore++;
-            updateResults("Paper covers Rock. You Lose!");
+            updateResults("Paper covers Rock. You Lose!", "red");
             updateScoreBoard();
         } else {
             playerScore++;
-            updateResults("Rock crushes Scissors. You Win!");
+            updateResults("Rock crushes Scissors. You Win!", "green");
             updateScoreBoard();
         }
     } else if (playerChoice === "paper") {
         if (computerChoice === "scissors") {
             computerScore++;
-            updateResults("Scissors cut Paper. You Lose!");
+            updateResults("Scissors cut Paper. You Lose!", "red");
             updateScoreBoard();
         } else {
             playerScore++;
-            updateResults("Paper covers Rock. You Win!");
+            updateResults("Paper covers Rock. You Win!", "green");
             updateScoreBoard();
         }
     } else {
         if (computerChoice === "rock") {
             computerScore++;
-            updateResults("Rock crushes Scissors. You Lose!");
+            updateResults("Rock crushes Scissors. You Lose!", "red");
             updateScoreBoard();
         } else {
             playerScore++;
-            updateResults("Scissors cut Paper. You Win!");
+            updateResults("Scissors cut Paper. You Win!", "green");
             updateScoreBoard();
         }
     }
@@ -81,43 +88,25 @@ function updateScoreBoard() {
     computerScoreBoard.textContent = `Computer Score: ${computerScore}`;
     if (playerScore == 5) {
         const resultsArea = document.querySelector('#results-box');
-        resultsArea.textContent = "YOU WIN!";
-        playerScore = 0;
-        computerScore = 0;
+        updateResults("YOU WIN!", "dark-green");
+        resetGame();
     } else if (computerScore == 5) {
         const resultsArea = document.querySelector('#results-box');
-        resultsArea.textContent = "YOU LOSE!";
-        playerScore = 0;
-        computerScore = 0;
+        updateResults("YOU LOSE!", "dark-red");
+        resetGame();
     }
 }
 
-function updateResults(string) {
+function updateResults(string, color) {
     const resultsArea = document.querySelector('#results-box');
     resultsArea.textContent = string;
+    resultsArea.style.color = color;
 }
 
-// Play 5 Rounds
-
-
-/*
-function game() {
-    let i;
+function resetGame() {
     playerScore = 0;
     computerScore = 0;
-    for (i = 0; i < 5; i++) {
-        console.log(playRound(playerChoice, computerChoice));
-        console.log(`Round ${i+1} / 5 | Your score: ${playerScore} | Computer score: ${computerScore}`);
-    }
-
-    if (playerScore > computerScore) {
-        return "You win!";
-    } else if (playerScore < computerScore) {
-        return "You lose!";
-    } else {
-        return "Tie game!";
-    }
+    updateScoreBoard();
+    yourIcon.src = 'images/question.png';
+    computerIcon.src = 'images/question.png';
 }
-
-console.log(game());
-*/
