@@ -116,7 +116,7 @@ function playRound(playerChoice, computerChoice) {
             updateResults("Scissors cut Paper. You Lose!", "red");
         } else if (computerChoice === "lizard") {
             computerScore++;
-            updateResults("Lizars eats Paper. You Lose!", "red");
+            updateResults("Lizard eats Paper. You Lose!", "red");
         } else if (computerChoice === "rock") {
             playerScore++;
             updateResults("Paper covers Rock. You Win!", "green");
