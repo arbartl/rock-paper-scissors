@@ -1,5 +1,5 @@
 #game-area {
-    width: 50%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +9,7 @@
 #player-choices {
     border: 5px black solid;
     width: 50%;
-    height: 200px;
+    height: 300px;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -19,7 +19,7 @@
 #scoreboard {
     border: 5px black solid;
     width: 50%;
-    height: 200px;
+    height: 300px;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
@@ -28,7 +28,7 @@
 
 #results-area {
     border: 5px black solid;
-    width: 50%;
+    width: 80%;
     height: 200px;
     margin-top: 25px;
     padding: 10px;
