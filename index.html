@@ -9,33 +9,50 @@
   <script src="rps.js" defer>
   </script>
 
-<div id="game-area">
-  <div id="player-choices">
-    <h3>Make your choice:</h3>
-      <div>  
-      <button id="rock"><img src="images/rock.png" class="icon"><p>ROCK</p></button>
-      <button id="paper"><img src="images/paper.png" class="icon"><p>PAPER</p></button>
-      <button id="scissors"><img src="images/scissors.png" class="icon"><p>SCISSORS</p></button>
+<div id="screen">
+  <h1 id="page-title">ROCK - PAPER - SCISSORS - LIZARD - SPOCK</h1>
+  <div id="game-area">
+    <div id="player-choices" class="box">
+      <h2>Make your choice:</h2>
+        <div>  
+        <button id="rock" class="choice-button"><img src="images/rock.png" class="icon"><p>ROCK</p></button>
+        <button id="paper" class="choice-button"><img src="images/paper.png" class="icon"><p>PAPER</p></button>
+        <button id="scissors" class="choice-button"><img src="images/scissors.png" class="icon"><p>SCISSORS</p></button>
+        <button id="lizard" class="choice-button"><img src="images/lizard.png" class="icon"><p>LIZARD</p></button>
+        <button id="spock" class="choice-button"><img src="images/spock.png" class="icon"><p>SPOCK</p></button>
       </div>
-  </div>
-  <div id="scoreboard">
-    <div id="player-score">Your Score: 0</div>
-    <div id="computer-score">Computer Score: 0</div>
-  </div>
-</div>
-<div id="results-area">
-  <div id="fight-graphic">
-    <div class="graphic-icon">
-      <img id="your-graphic" class="graphic-icon" src="images/question.png">
     </div>
-    <div class="graphic-icon">
-      <img id="computer-graphic" class="graphic-icon" src="images/question.png">
+
+    <div id="scoreboard" class="box">
+      <div id="player-score">Your Score:
+        <div id="player-score-board">
+
+        </div>
+      </div>
+
+      <div id="computer-score">Computer Score:
+        <div id="computer-score-board">
+          
+        </div>
+      </div>
     </div>
   </div>
-  <h3>Results:</h3>
-  <p id="results-box">
-    Waiting for your choice...
-  </p>
+
+  <div id="results-area" class="box">
+    <div id="fight-graphic">
+      <div class="graphic-icon">
+        <img id="your-graphic" class="graphic-icon box" src="images/question.png">
+      </div>
+      <div class="graphic-icon">
+        <img id="computer-graphic" class="graphic-icon box" src="images/question.png">
+      </div>
+    </div>
+    <h2>Results:</h2>
+    <p id="results-box">
+      Waiting for your choice...
+    </p>
+    <p><button id="reset-button">RESET</button></p>
+  </div>
 </div>
 </body>
 </html>
